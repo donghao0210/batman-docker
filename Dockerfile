@@ -1,6 +1,5 @@
 FROM ubuntu
 
-RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 871920D1991BC93C
 RUN apt update -y && apt install -y batctl net-tools
 RUN echo 'batman-adv' | tee --append /etc/modules
 RUN echo 'denyinterfaces wlan0' | tee --append /etc/dhcpcd.conf

@@ -9,8 +9,8 @@ sudo make install
 
 echo 'batman-adv' | tee --append /etc/modules
 echo 'denyinterfaces wlan0' | tee --append /etc/dhcpcd.conf
-sudo cp /bat0 /etc/network/interfaces.d/bat0
-sudo cp /wlan0 /etc/network/interfaces.d/wlan0
+echo sudo cp bat0 /etc/network/interfaces.d/bat0
+sudo cp wlan0 /etc/network/interfaces.d/wlan0
 sudo chmod +x /start-batman-adv.sh
 ./start-batman-adv.sh
 

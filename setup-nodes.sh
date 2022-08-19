@@ -11,9 +11,9 @@ cd ~/batman-setup
 echo 'batman-adv' | tee --append /etc/modules
 echo 'denyinterfaces wlan0' | tee --append /etc/dhcpcd.conf
 echo "copying bat0 to interface"
-sudo cp batman-setup/bat0 ~/etc/network/interfaces.d/bat0
+sudo cp bat0 ~/etc/network/interfaces.d/bat0
 echo "copying bat0 to wlan0"
-sudo cp batwlan0 ~/etc/network/interfaces.d/wlan0
+sudo cp wlan0 ~/etc/network/interfaces.d/wlan0
 echo "Giving exceute permission to start-batman-adv.sh"
 sudo chmod +x /start-batman-adv.sh
 ./start-batman-adv.sh

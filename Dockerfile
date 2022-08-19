@@ -1,6 +1,7 @@
-FROM ubuntu
+#Failed
+FROM ubuntu:22.04
 
-RUN apt update -y && apt install -y batctl net-tools
+RUN apt get update -y && apt install -y git nano batctl net-tools
 RUN echo 'batman-adv' | tee --append /etc/modules
 RUN echo 'denyinterfaces wlan0' | tee --append /etc/dhcpcd.conf
 ADD bat0 /etc/network/interfaces.d/bat0

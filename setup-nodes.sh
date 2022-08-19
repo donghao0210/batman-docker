@@ -1,6 +1,6 @@
 #!/bin/bash
 #To get all the tools install
-sudo apt get update -y && apt install -y git nano batctl net-tools dnsmasq libnl-genl-3-dev libnl-3-dev network-manager
+sudo apt update -y && apt install -y git nano batctl net-tools dnsmasq libnl-genl-3-dev libnl-3-dev network-manager
 
 #if batctl is not installed correctly
 sudo git clone https://github.com/open-mesh-mirror/batctl

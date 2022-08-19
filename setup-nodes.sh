@@ -1,16 +1,20 @@
 #!/bin/bash
 #To get all the tools install
-sudo apt get update -y && apt install -y git nano batctl net-tools dnsmasq libnl-genl-3-dev network-manager
+sudo apt get update -y && apt install -y git nano batctl net-tools dnsmasq libnl-genl-3-dev libnl-3-dev network-manager
 
 #if batctl is not installed correctly
 sudo git clone https://github.com/open-mesh-mirror/batctl
 cd batctl
 sudo make install
+cd ~/batman-setup
 
 echo 'batman-adv' | tee --append /etc/modules
 echo 'denyinterfaces wlan0' | tee --append /etc/dhcpcd.conf
-echo sudo cp bat0 /etc/network/interfaces.d/bat0
-sudo cp wlan0 /etc/network/interfaces.d/wlan0
+echo "copying bat0 to interface"
+sudo cp batman-setup/bat0 ~/etc/network/interfaces.d/bat0
+echo "copying bat0 to wlan0"
+sudo cp batwlan0 ~/etc/network/interfaces.d/wlan0
+echo "Giving exceute permission to start-batman-adv.sh"
 sudo chmod +x /start-batman-adv.sh
 ./start-batman-adv.sh
 
